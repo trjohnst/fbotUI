@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navigation">
+      <h1 class="title">Fiddler Remote</h1>
+      <ul class="options">
+        <li class="option">
+          <button id="connect" class="fa fa-wifi"></button>
+        </li>
+      </ul>
+    </nav>
+    <section id="content">
+      <div id="video-wrapper">
+      </div>
+      <div id="remote-wrapper" class="metal">
+        <div class="control radial">
+          <i class="fa fa-chevron-left"></i>
+          <i class="fa fa-chevron-right"></i>
+          <i class="fa fa-chevron-down"></i>
+          <i class="fa fa-chevron-up"></i>
+        </div>
+      </div>
+    </section>
+    <form id="connect-form" name="fbot_gui" method="get" action="./">
+      <input type="text" id="rosbridgeHost" placeholder="Server Hostname or IP">
+      <input type="text" id="rosbridgePort" placeholder="Port">
+      <input type="submit" id="connect-button" value="Connect">
+    </form>
+    <div id="mask"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      var $form = $('#connect-form'),
+          $mask = $('#mask');
+
+      $('#mask').on('click', function() {
+        $mask.hide();
+        $form.hide();
+      });
+
+      $('#connect').on('click', function() {
+        $mask.show();
+        $form.show();
+      });
+    </script>
+  </body>
+</html>

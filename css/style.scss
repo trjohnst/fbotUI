@@ -1,0 +1,208 @@
+$light-fg: white;
+$dark-fg: #606060;
+$light-bg: #398953;
+$nav-height: 40px;
+$default-height: 18px;
+$title-height: $default-height;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: $default-height;
+  color: $light-fg;
+}
+
+button.fa {
+  border: 0;
+  background: none;
+}
+
+$dir-size: 20px;
+.metal .fa {
+  position: absolute;
+  font-size: $dir-size;
+  color: black;
+}
+
+.fa-chevron-left {
+  left: $dir-size;
+  top: 50%;
+  margin-top: -$dir-size/2;
+}
+.fa-chevron-right {
+  right: $dir-size;
+  top: 50%;
+  margin-top: -$dir-size/2;
+}
+.fa-chevron-up {
+  margin-left: -$dir-size/2;
+  top: $dir-size;
+}
+.fa-chevron-down {
+  margin-left: -$dir-size/2;
+  bottom: $dir-size;
+}
+
+.metal .control {
+  position: relative;
+  margin: 40px auto;
+  outline: none;
+
+  font: bold 6em/2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  text-align: center;
+  color: hsla(0,0%,20%,1);
+  text-shadow: hsla(0,0%,40%,.5) 0 -1px 0, hsla(0,0%,100%,.6) 0 2px 1px;
+
+  background-color: hsl(0,0%,90%);
+  box-shadow: inset hsla(0,0%,15%,  1) 0  0px 0px 4px, /* border */
+    inset hsla(0,0%,15%, .8) 0 -1px 5px 4px, /* soft SD */
+    inset hsla(0,0%,0%, .25) 0 -1px 0px 7px, /* bottom SD */
+    inset hsla(0,0%,100%,.7) 0  2px 1px 7px, /* top HL */
+
+    hsla(0,0%, 0%,.15) 0 -5px 6px 4px, /* outer SD */
+    hsla(0,0%,100%,.5) 0  5px 6px 4px; /* outer HL */
+
+  transition: color .2s;
+}
+
+/* http://codepen.io/simurai/pen/DwJdq */
+
+.metal .control.radial {
+  width: 160px;
+  height: 160px;
+  line-height: 160px;
+  border-radius: 80px;
+  background-image: -webkit-radial-gradient(  50%   0%,  8% 50%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient(  50% 100%, 12% 50%, hsla(0,0%,100%,.6) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient(   0%  50%, 50%  7%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient( 100%  50%, 50%  5%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   3%, hsla(0,0%,  0%,.1) 3.5%),
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%,.1) 7.5%),
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.2) 2.2%),
+
+    -webkit-radial-gradient( 50% 50%, 200% 50%, hsla(0,0%,90%,1) 5%, hsla(0,0%,85%,1) 30%, hsla(0,0%,60%,1) 100%);
+}
+
+.metal .control.radial:before, .metal .control.radial:after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+
+  /* fake conical gradients */
+  background-image: -webkit-radial-gradient(  50%   0%, 10% 50%, hsla(0,0%,0%,.1) 0%, hsla(0,0%,0%,0) 100%),
+    -webkit-radial-gradient(  50% 100%, 10% 50%, hsla(0,0%,0%,.1) 0%, hsla(0,0%,0%,0) 100%),
+    -webkit-radial-gradient(   0%  50%, 50% 10%, hsla(0,0%,0%,.1) 0%, hsla(0,0%,0%,0) 100%),
+    -webkit-radial-gradient( 100%  50%, 50% 06%, hsla(0,0%,0%,.1) 0%, hsla(0,0%,0%,0) 100%);
+}
+.metal .control.radial:before { transform: rotate( 65deg); }
+.metal .control.radial:after { transform: rotate(-65deg); }
+
+/* Oval ------------------------- */
+
+.metal .control.linear.oval {
+  margin-top: 100px;
+  width: 70px;
+  height: 60px;
+  line-height: 60px !important;
+  border-radius: 50%;
+  font: italic bold 3em/50px Georgia, "Times New Roman", Times, serif;
+}
+
+.navigation {
+  background-color: $light-bg;
+  color: $light-fg;
+  width: 100%;
+  overflow: hidden;
+  height: $nav-height;
+  line-height: $nav-height;
+  padding-left:($nav-height - $title-height)/2;
+  // box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+}
+
+.title {
+  float: left;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.options {
+  position: absolute;
+  right: ($nav-height - $title-height)/2;
+  top: 0;
+  overflow: hidden;
+}
+.option {
+  font-size: 14px;
+  float: right;
+
+  .fa {
+    height: $nav-height;
+    line-height: $nav-height;
+    font-size: 22px;
+    display: inline;
+  }
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+#video-wrapper {
+  background-color: white;
+  height: 100%;
+  display: table-cell;
+}
+#remote-wrapper {
+  background-color: white;
+  height: 100%;
+  border-left: 1px solid $dark-fg;
+  display: table-cell;
+  width: 40%;
+  min-width: 280px;
+}
+
+#connect-form {
+  display: none;
+  position: absolute;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  z-index: 1001;
+  background-color: $light-fg;
+  padding: 20px 0;
+}
+
+#connect-button {
+  background: #20c05c;
+  color: $light-fg;
+  border: 1px solid #1fbc5a;
+  border-radius: 40px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+input {
+  display: block;
+  margin: 10px auto 0;
+  color: $dark-fg;
+}
+
+#mask {
+  display: none;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0B1B11;
+  opacity: .8;
+}
