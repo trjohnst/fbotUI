@@ -1,0 +1,114 @@
+@import "remoteStyles/metal";
+
+$light-fg: white;
+$dark-fg: #606060;
+$light-bg: #398953;
+$nav-height: 40px;
+$default-height: 18px;
+$title-height: $default-height;
+
+* {
+  margin: 0;
+  padding: 0;//
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: $default-height;
+  color: $light-fg;
+}
+
+button.fa {
+  border: 0;
+  background: none;
+}
+
+.navigation {
+  background-color: $light-bg;
+  color: $light-fg;
+  width: 100%;
+  overflow: hidden;
+  height: $nav-height;
+  line-height: $nav-height;
+  padding-left:($nav-height - $title-height)/2;
+  // box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+}
+
+.title {
+  float: left;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.options {
+  position: absolute;
+  right: ($nav-height - $title-height)/2;
+  top: 0;
+  overflow: hidden;
+}
+.option {
+  font-size: 14px;
+  float: right;
+
+  .fa {
+    height: $nav-height;
+    line-height: $nav-height;
+    font-size: 22px;
+    display: inline;
+  }
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+#video-wrapper {
+  background-color: white;
+  height: 100%;
+  display: table-cell;
+}
+#remote-wrapper {
+  background-color: white;
+  height: 100%;
+  border-left: 1px solid $dark-fg;
+  display: table-cell;
+  width: 40%;
+  min-width: 280px;
+}
+
+#connect-form {
+  display: none;
+  position: absolute;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  z-index: 1001;
+  background-color: $light-fg;
+  padding: 20px 0;
+}
+
+#connect-button {
+  background: #20c05c;
+  color: $light-fg;
+  border: 1px solid #1fbc5a;
+  border-radius: 40px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+input {
+  display: block;
+  margin: 10px auto 0;
+  color: $dark-fg;
+}
+
+#mask {
+  display: none;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0B1B11;
+  opacity: .8;
+}
