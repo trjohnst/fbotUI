@@ -64,6 +64,7 @@ button.fa {
   background-color: white;
   height: 100%;
   display: table-cell;
+  vertical-align: middle;
 }
 @media (max-width: 600px) {
   #video-wrapper {
@@ -73,7 +74,7 @@ button.fa {
 #remote-wrapper {
   background-color: white;
   height: 100%;
-  border-left: 1px solid $dark-fg;
+  // border-left: 1px solid $dark-fg;
   display: table-cell;
   width: 40%;
   min-width: 280px;
