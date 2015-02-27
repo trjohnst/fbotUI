@@ -97,6 +97,12 @@ gulp.task('default', ['clean'], function() {
     gulp.start('styles', 'scripts', 'images', 'fonts', 'templates');
 });
 
+// Push to apache server
+gulp.task('stage', ['default'], function() {
+  return gulp.src('dist/**/*')
+    .pipe(gulp.dest('/Library/WebServer/Documents'));
+});
+
 // Watch
 gulp.task('watch', function() {
   gulp.start('default');
