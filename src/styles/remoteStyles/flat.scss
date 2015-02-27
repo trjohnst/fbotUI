@@ -1,0 +1,41 @@
+
+.flat {
+  $margin: 16px;
+  $dir-size: 30px;
+  $half-dir: $dir-size/2;
+
+  .fa-chevron-left {
+    left: $margin;
+    margin-top: -$half-dir;
+  }
+  .fa-chevron-right {
+    right: $margin;
+    margin-top: -$half-dir;
+  }
+  .fa-chevron-up {
+    margin-left: -$half-dir;
+    top: $margin;
+  }
+  .fa-chevron-down {
+    margin-left: -$half-dir;
+    bottom: $margin;
+  }
+
+  .fa {
+    font-size: $dir-size;
+    color: #E1E1E1;
+  }
+
+  .movement {
+    color: hsla(0,0%,20%,1);
+    text-shadow: hsla(0,0%,40%,.3) 0 -1px 0, hsla(0,0%,100%,.6) 0 2px 1px;
+
+    border: 7px solid #E1E1E1;
+    box-shadow: rgba(102,102,102,.3) 0 -1px 0,rgba(255,255,255,.6) 0 2px 1px;
+
+    transition: color .2s;
+  } // end .movement
+}
+
+
+/* http://codepen.io/simurai/pen/DwJdq */

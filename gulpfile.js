@@ -17,13 +17,16 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     // livereload = require('gulp-livereload'),
     del = require('del'),
-    handlebars = require('gulp-compile-handlebars');
+    handlebars = require('gulp-compile-handlebars'),
+    data = {
+      theme : {
+        remote : 'flat'
+      }
+    }
 
 // Templates
 gulp.task('templates', function () {
-    var templateData = {
-        firstName: 'Kaanon'
-    },
+    var templateData = data,
     options = {
         ignorePartials: true,
         batch : ['./src/templates/partials'],
@@ -37,12 +40,13 @@ gulp.task('templates', function () {
     return gulp.src('src/templates/index.hbs')
         .pipe(handlebars(templateData, options))
         .pipe(rename('index.html'))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(notify({ message: '===== Templates task complete ===' }));
 });
 
 // Styles
 gulp.task('styles', function() {
-  //return sass('src/styles/*.scss', { style: 'expanded' })
+  // TODO only render theme in use
   return gulp.src('src/styles/**/*.scss')
     .pipe(sass())
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
@@ -52,7 +56,7 @@ gulp.task('styles', function() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
     .pipe(gulp.dest('dist/assets/css'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(notify({ message: '===== Styles task complete ===' }));
 });
 
 // Scripts
@@ -65,7 +69,7 @@ gulp.task('scripts', function() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(gulp.dest('dist/assets/scripts'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(notify({ message: '===== Scripts task complete ===' }));
 });
 
 // Images
@@ -73,14 +77,14 @@ gulp.task('images', function() {
   return gulp.src('src/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/assets/img'))
-    .pipe(notify({ message: 'Images task complete' }));
+    .pipe(notify({ message: '===== Images task complete ===' }));
 });
 
 // Fonts
 gulp.task('fonts', function() {
   return gulp.src('src/fonts/**/*')
     .pipe(gulp.dest('dist/assets/fonts'))
-    .pipe(notify({ message: 'Fonts task complete' }));
+    .pipe(notify({ message: '===== Fonts task complete ===' }));
 });
 
 // Clean

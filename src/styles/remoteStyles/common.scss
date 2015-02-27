@@ -1,0 +1,44 @@
+
+.fa-chevron-left {
+  top: 50%;
+}
+.fa-chevron-right {
+  top: 50%;
+}
+
+.fa {
+  position: absolute;
+}
+
+.movement {
+  position: relative;
+  margin: 40px auto;
+  outline: none;
+
+  font: bold 6em/2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  text-align: center;
+
+  /* Radial ------------------------- */
+
+  &.radial {
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    border-radius: 50%;
+  }
+
+  /* Oval ------------------------- */
+
+  &.linear.oval {
+    margin-top: 100px;
+    width: 70px;
+    height: 60px;
+    line-height: 60px !important;
+    border-radius: 50%;
+    font: italic bold 3em/50px Georgia, "Times New Roman", Times, serif;
+  }
+} // end .movement
+
+
+
+/* http://codepen.io/simurai/pen/DwJdq */
