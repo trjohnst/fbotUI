@@ -7,6 +7,13 @@ $nav-height: 40px;
 $default-height: 18px;
 $title-height: $default-height;
 
+// Breakpoints
+$desktop: only screen and (min-width: 1025px);
+$tablet-landscape: only screen and (min-width: 737px) and (orientation: landscape);
+$tablet-portrait: only screen and (min-width: 737px) and (orientation: portrait);
+$phone-landscape: only screen and (max-width: 736px) and (orientation: landscape);
+$phone-portrait: only screen and (max-width: 736px) and (orientation: portrait);
+
 * {
   margin: 0;
   padding: 0;//
@@ -66,7 +73,7 @@ button.fa {
   display: table-cell;
   vertical-align: middle;
 }
-@media (max-width: 600px) {
+@media ($phone-portrait) {
   #video-wrapper {
     display: none;
   }
