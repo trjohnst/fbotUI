@@ -65,6 +65,11 @@ button.fa {
   height: 100%;
   display: table-cell;
 }
+@media (max-width: 600px) {
+  #video-wrapper {
+    display: none;
+  }
+}
 #remote-wrapper {
   background-color: white;
   height: 100%;
@@ -78,6 +83,7 @@ button.fa {
   display: none;
   position: absolute;
   left: 50%;
+  top: 80px;
   width: 300px;
   margin-left: -150px;
   z-index: 1001;

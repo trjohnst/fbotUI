@@ -12,22 +12,47 @@
         </li>
       </ul>
     </nav>
-    <section id="content">
+    <section id="content" class="{{theme.remote}}">
       <div id="video-wrapper">
+        <div class="display">
+          <div class="glass">
+          </div>
+          <div class="render">
+            <div id="videoCanvas"></div>
+          </div>
+        </div>
       </div>
-      <div id="remote-wrapper" class="{{theme.remote}}">
-        {{!--
-        <div class="camera-pan">
+      <div id="remote-wrapper">
+        <div class="display">
+          <div class="glass">
+          </div>
+          <div class="render">
+            <p class="type">Nav&nbsp;:&nbsp;<span id="nav-value" class="value">UNDEF</span></p>
+            <p class="type">Mon&nbsp;:&nbsp;<span id="mon-value" class="value">UNDEF</span></p>
+            <p class="type">Col&nbsp;:&nbsp;<span id="col-value" class="value">UNDEF</span></p>
+          </div>
+        </div>
+        <div class="camera rectangular button">
           <i class="fa fa-chevron-left"></i>
+          <i class="fa fa-video-camera"></i>
           <i class="fa fa-chevron-right"></i>
         </div>
-        --}}
-        <div class="movement radial">
+        <div class="movement radial button">
           <i class="fa fa-chevron-left"></i>
           <i class="fa fa-chevron-right"></i>
           <i class="fa fa-chevron-down"></i>
           <i class="fa fa-chevron-up"></i>
         </div>
+        {{!--
+        <div class="arm-controls">
+          <button class="button linear oval">
+            <i class="fa fa-chevron-up"></i>
+          </button>
+          <button class="button linear oval">
+            <i class="fa fa-chevron-up"></i>
+          </button>
+        </div>
+        --}}
       </div>
     </section>
     <form id="connect-form" name="fbot_gui" method="get" action="./">
