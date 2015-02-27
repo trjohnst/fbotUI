@@ -20,7 +20,7 @@ var gulp = require('gulp'),
     handlebars = require('gulp-compile-handlebars'),
     data = {
       theme : {
-        remote : 'flat'
+        remote : 'metal'
       }
     }
 
@@ -41,7 +41,7 @@ gulp.task('templates', function () {
         .pipe(handlebars(templateData, options))
         .pipe(rename('index.html'))
         .pipe(gulp.dest('dist'))
-        .pipe(notify({ message: '===== Templates task complete ===' }));
+        .pipe(notify({ message: 'Templates task complete' }));
 });
 
 // Styles
@@ -56,7 +56,7 @@ gulp.task('styles', function() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
     .pipe(gulp.dest('dist/assets/css'))
-    .pipe(notify({ message: '===== Styles task complete ===' }));
+    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 // Scripts
@@ -69,7 +69,7 @@ gulp.task('scripts', function() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(gulp.dest('dist/assets/scripts'))
-    .pipe(notify({ message: '===== Scripts task complete ===' }));
+    .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 // Images
@@ -77,14 +77,14 @@ gulp.task('images', function() {
   return gulp.src('src/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/assets/img'))
-    .pipe(notify({ message: '===== Images task complete ===' }));
+    .pipe(notify({ message: 'Images task complete' }));
 });
 
 // Fonts
 gulp.task('fonts', function() {
   return gulp.src('src/fonts/**/*')
     .pipe(gulp.dest('dist/assets/fonts'))
-    .pipe(notify({ message: '===== Fonts task complete ===' }));
+    .pipe(notify({ message: 'Fonts task complete' }));
 });
 
 // Clean
@@ -99,6 +99,7 @@ gulp.task('default', ['clean'], function() {
 
 // Watch
 gulp.task('watch', function() {
+  gulp.start('default');
 
   // Watch .scss files
   gulp.watch('src/styles/**/*.scss', ['styles']);
